@@ -4,7 +4,7 @@ package com.wsyw126.MySQLxml.sql;
 import com.wsyw126.MySQLxml.utils.Util;
 
 /**
- * HBaseQuery.
+ * SQLQuery.
  */
 public class SQLQuery {
 

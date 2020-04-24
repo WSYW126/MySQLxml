@@ -1,0 +1,212 @@
+<SimpleHbase>
+
+	<statements>
+		<statement id="test_text">
+			hello world to allen .
+		</statement>
+
+		<statement id="test_comment">
+			<!-- comment -->
+			hello world <!-- comment -->
+			to allen .
+			<!-- comment -->
+		</statement>
+
+		<statement id="test_CDATA">
+			<!-- comment -->
+			hello world <!-- comment -->
+			to allen .
+			<!-- comment -->
+			<![CDATA[<sender>John Smith</sender>]]>
+		</statement>
+
+		<statement id="test_isNull">
+			allenc
+			<isNull prepend="love" property="c">
+				dandan equal #c#
+			</isNull>
+		</statement>
+
+		<statement id="test_isNotNull">
+			allen
+			<isNotNull prepend="love" property="c">
+				dandan
+			</isNotNull>
+		</statement>
+
+		<statement id="test_isEmpty">
+			allen
+			<isEmpty prepend="love" property="c">
+				dandan
+			</isEmpty>
+
+
+		</statement>
+
+		<statement id="test_isNotEmpty">
+			allen
+			<isNotEmpty prepend="love" property="c">
+				dandan
+			</isNotEmpty>
+
+		</statement>
+
+
+
+
+		<statement id="test_isPropertyAvailable">
+			allen
+			<isPropertyAvailable prepend="love" property="c">
+				dandan
+			</isPropertyAvailable>
+
+		</statement>
+
+		<statement id="test_isNotPropertyAvailable">
+			allen
+			<isNotPropertyAvailable prepend="love"
+				property="c">
+				dandan
+			</isNotPropertyAvailable>
+		</statement>
+
+		<statement id="test_isEqual">
+			allen
+			<isEqual prepend="AND" property="ok" compareValue="Y">
+				MARRIED
+			</isEqual>
+
+			<isEqual prepend="OR" property="age" compareValue="30">
+				AGE
+			</isEqual>
+		</statement>
+
+		<statement id="test_isNotEqual">
+			allen
+			<isNotEqual prepend="AND" property="ok" compareValue="Y">
+				MARRIED
+			</isNotEqual>
+
+			<isNotEqual prepend="OR" property="age" compareValue="30">
+				AGE
+			</isNotEqual>
+		</statement>
+
+		<statement id="test_isGreaterThan">
+			allen
+			<isGreaterThan prepend="AND" property="name"
+				compareValue="bob">
+				MARRIED
+			</isGreaterThan>
+
+			<isGreaterThan prepend="OR" property="age"
+				compareValue="30">
+				AGE
+			</isGreaterThan>
+
+			<isGreaterThan prepend="OR" property="date"
+				compareValue="2013-10-01">
+				tree
+			</isGreaterThan>
+		</statement>
+
+		<statement id="test_isGreaterEqual">
+			allen
+			<isGreaterEqual prepend="AND" property="name"
+				compareValue="bob">
+				MARRIED
+			</isGreaterEqual>
+
+			<isGreaterEqual prepend="OR" property="age"
+				compareValue="30">
+				AGE
+			</isGreaterEqual>
+
+			<isGreaterEqual prepend="OR" property="date"
+				compareValue="2013-10-01">
+				tree
+			</isGreaterEqual>
+		</statement>
+
+		<statement id="test_isLessThan">
+			allen
+			<isLessThan prepend="AND" property="name" compareValue="bob">
+				MARRIED
+			</isLessThan>
+
+			<isLessThan prepend="OR" property="age" compareValue="30">
+				AGE
+			</isLessThan>
+
+			<isLessThan prepend="OR" property="date" compareValue="2013-10-01">
+				tree
+			</isLessThan>
+		</statement>
+
+		<statement id="test_isLessEqual">
+			allen
+			<isLessEqual prepend="AND" property="name" compareValue="bob">
+				MARRIED
+			</isLessEqual>
+
+			<isLessEqual prepend="OR" property="age" compareValue="30">
+				AGE
+			</isLessEqual>
+
+			<isLessEqual prepend="OR" property="date" compareValue="2013-10-01">
+				tree
+			</isLessEqual>
+		</statement>
+
+
+
+		<statement id="test_dynamic1">
+			<dynamic>
+				allen
+				<isNull prepend="AND" property="c">
+					love
+				</isNull>
+				<isNull property="d">
+					dandan
+				</isNull>
+			</dynamic>
+		</statement>
+
+		<statement id="test_dynamic2">
+			<dynamic prepend="hi">
+				allen
+				<isNull prepend="AND" property="c">
+					love
+				</isNull>
+				<isNull property="d">
+					dandan
+				</isNull>
+			</dynamic>
+		</statement>
+
+		<statement id="test_dynamic3">
+			<dynamic prepend="hi">
+				allen
+				<isNull prepend="AND" property="c">
+					love
+					<dynamic prepend="hello">
+						<isNull property="d">
+							dandan
+						</isNull>
+						cup
+						<isNull prepend="cat" property="e">
+							linzhi
+						</isNull>
+					</dynamic>
+				</isNull>
+
+			</dynamic>
+		</statement>
+
+	</statements>
+
+
+
+</SimpleHbase>   
+
+

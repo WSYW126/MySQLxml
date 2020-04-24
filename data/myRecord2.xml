@@ -1,0 +1,18 @@
+<SimpleHbase>
+
+    <SQLTableSchema tableName="MyRecordV_Allen3">
+        <SQLColumnSchema column="COUNT" typeName="int"/>
+        <SQLColumnSchema column="GMT_CREATE" typeName="date"/>
+        <SQLColumnSchema column="GMT_MODIFY" typeName="date"/>
+    </SQLTableSchema>
+
+    <MappingType className="com.wsyw126.MySQLxml.model.ResourceCounterDO">
+        <field name="count" column="COUNT"/>
+        <field name="gmtCreate" column="GMT_CREATE"/>
+        <field name="gmtModify" column="GMT_MODIFY"/>
+    </MappingType>
+
+</SimpleHbase>   
+
+
+
