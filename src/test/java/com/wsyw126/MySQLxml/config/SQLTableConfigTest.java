@@ -3,9 +3,15 @@ package com.wsyw126.MySQLxml.config;
 import com.wsyw126.MySQLxml.client.TypeInfo;
 import com.wsyw126.MySQLxml.model.ResourceCounterDO;
 import com.wsyw126.MySQLxml.utils.CachedFileSystemResource;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 
 class SQLTableConfigTest {
+
+    /**
+     * log.
+     */
+    final private static Logger log = Logger.getLogger(SQLTableConfig.class);
 
     static SQLTableConfig sqlTableConfig = new SQLTableConfig();
 
@@ -26,7 +32,7 @@ class SQLTableConfigTest {
 
         //通过注释进行初始化
         TypeInfo typeInfo = sqlTableConfig.findTypeInfo(ResourceCounterDO.class);
-        System.out.println("typeInfo = " + typeInfo);
+        log.info("typeInfo = " + typeInfo);
     }
 
     @Test
@@ -37,7 +43,7 @@ class SQLTableConfigTest {
 
         //通过xml进行初始化
         TypeInfo typeInfo = sqlTableConfig.findTypeInfo(ResourceCounterDO.class);
-        System.out.println("typeInfo = " + typeInfo);
+        log.info("typeInfo = " + typeInfo);
     }
 
     @Test
