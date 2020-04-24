@@ -77,5 +77,13 @@ public class ResourceCounterDO {
         this.gmtModify = gmtModify;
     }
 
-
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ResourceCounterDO{");
+        sb.append("count=").append(count);
+        sb.append(", gmtCreate=").append(gmtCreate);
+        sb.append(", gmtModify=").append(gmtModify);
+        sb.append('}');
+        return sb.toString();
+    }
 }

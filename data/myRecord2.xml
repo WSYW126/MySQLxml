@@ -12,6 +12,22 @@
         <field name="gmtModify" column="GMT_MODIFY"/>
     </MappingType>
 
+
+    <statements>
+
+        <statement id="queryByCount">
+            select where id greaterequal #id#
+            <isPropertyAvailable prepend="and" property="count">
+                COUNT equal #count#
+            </isPropertyAvailable>
+        </statement>
+
+        <statement id="queryById">
+            select where id equal #id#
+        </statement>
+
+    </statements>
+
 </SimpleHbase>   
 
 
