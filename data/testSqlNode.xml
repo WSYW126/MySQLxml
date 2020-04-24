@@ -1,4 +1,4 @@
-<SimpleHbase>
+<SimpleSQL>
 
 	<statements>
 		<statement id="test_text">
@@ -207,6 +207,6 @@
 
 
 
-</SimpleHbase>   
+</SimpleSQL>
 
 

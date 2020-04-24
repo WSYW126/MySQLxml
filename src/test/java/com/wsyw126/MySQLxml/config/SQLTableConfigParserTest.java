@@ -23,9 +23,9 @@ public class SQLTableConfigParserTest {
 
 
     protected SQLNode findStatementSQLNode(String id) {
-        List<SQLQuery> hbaseQueries = SQLTableConfigParser
+        List<SQLQuery> sqlQueries = SQLTableConfigParser
                 .parseSQLQuery(Config.TestSqlNodeXmlFile);
-        for (SQLQuery query : hbaseQueries) {
+        for (SQLQuery query : sqlQueries) {
             if (query.getId().equals(id)) {
                 return query.getSqlNode();
             }

@@ -15,10 +15,10 @@ import java.util.Map;
  */
 public abstract class SQLClientBase implements SQLClient {
     protected SQLTableConfig sqlTableConfig;
-    protected SimpleSQLRuntimeSetting simpleHbaseRuntimeSetting = new SimpleSQLRuntimeSetting();
+    protected SimpleSQLRuntimeSetting simpleSQLRuntimeSetting = new SimpleSQLRuntimeSetting();
 
 
-    public SQLTableConfig getHbaseTableConfig() {
+    public SQLTableConfig getSQLTableConfig() {
         return sqlTableConfig;
     }
 
@@ -26,7 +26,7 @@ public abstract class SQLClientBase implements SQLClient {
      * Find type info.
      */
     protected TypeInfo findTypeInfo(Class<?> type) {
-        return getHbaseTableConfig().findTypeInfo(type);
+        return getSQLTableConfig().findTypeInfo(type);
     }
 
     /**

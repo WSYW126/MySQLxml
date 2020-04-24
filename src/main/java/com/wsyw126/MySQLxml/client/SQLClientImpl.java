@@ -3,6 +3,7 @@ package com.wsyw126.MySQLxml.client;
 import com.wsyw126.MySQLxml.sql.SQLQuery;
 import com.wsyw126.MySQLxml.utils.SQLDO;
 import com.wsyw126.MySQLxml.utils.Util;
+import org.apache.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,10 @@ import java.util.Map;
  */
 public class SQLClientImpl extends SQLClientBase {
 
+    /** log. */
+    final private static Logger log = Logger.getLogger(SQLClientImpl.class);
+
+
     @Override
     public <T> T findObject(Class<? extends T> type, String id, Map<String, Object> para) {
         parseSelectFilter(id, para);
@@ -20,15 +25,17 @@ public class SQLClientImpl extends SQLClientBase {
     }
 
     private void parseSelectFilter(String id, Map<String, Object> para) {
-        SQLQuery sqlQuery = getHbaseTableConfig().getQueryMap().get(id);
+        SQLQuery sqlQuery = getSQLTableConfig().getQueryMap().get(id);
         Util.checkNull(sqlQuery);
 
         StringBuilder sb = new StringBuilder();
         Map<Object, Object> context = new HashMap<Object, Object>();
         sqlQuery.getSqlNode().applyParaMap(para, sb, context,
-                simpleHbaseRuntimeSetting);
+                simpleSQLRuntimeSetting);
 
-        String hql = sb.toString().trim();
+        String sql = sb.toString().trim();
+
+        log.info("sql = " + sql);
 
     }
 

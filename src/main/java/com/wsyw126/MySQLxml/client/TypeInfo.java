@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * POJO type and Hbase table mapping info.
+ * POJO type and SQL table mapping info.
  *
  * @author xinzhi
  */
@@ -95,9 +95,9 @@ public class TypeInfo {
      * Parse TypeInfo from Node.
      */
     public static TypeInfo parseNode(Node node,
-                                     SQLTableSchema hbaseTableSchema) {
+                                     SQLTableSchema sqlTableSchema) {
         Util.checkNull(node);
-        Util.checkNull(hbaseTableSchema);
+        Util.checkNull(sqlTableSchema);
 
         TypeInfo typeInfo = new TypeInfo();
 
@@ -114,7 +114,7 @@ public class TypeInfo {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node fieldNode = nodeList.item(i);
             ColumnInfo columnInfo = ColumnInfo.parseNode(type, fieldNode,
-                    hbaseTableSchema);
+                    sqlTableSchema);
             if (columnInfo == null) {
                 continue;
             }

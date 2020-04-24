@@ -1,4 +1,4 @@
-<SimpleHbase>
+<SimpleSQL>
 
     <SQLTableSchema tableName="MyRecordV_Allen3">
         <SQLColumnSchema column="COUNT" typeName="int"/>
@@ -28,7 +28,7 @@
 
     </statements>
 
-</SimpleHbase>   
+</SimpleSQL>
 
 
 

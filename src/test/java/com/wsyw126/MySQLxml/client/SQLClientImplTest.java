@@ -15,8 +15,12 @@ class SQLClientImplTest {
 
     @Test
     void findObject() {
+        HashMap<String, Object> para = new HashMap<>();
+        para.put("count", "12");
+
+
         SQLClient sqlClient = Config.getSqlClient();
-        ResourceCounterDO queryById = sqlClient.findObject(ResourceCounterDO.class, "queryById", new HashMap<>());
+        ResourceCounterDO queryById = sqlClient.findObject(ResourceCounterDO.class, "queryByCount", para);
         log.info("queryById =" + queryById);
 
     }

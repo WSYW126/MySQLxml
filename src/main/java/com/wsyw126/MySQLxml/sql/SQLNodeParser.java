@@ -29,7 +29,7 @@ import java.util.Map;
  */
 public class SQLNodeParser {
 
-    private static Map<SQLNodeType, SQLNodeHandler> hsqlNodeHandlers = new HashMap<>();
+    private static Map<SQLNodeType, SQLNodeHandler> sqlNodeHandlers = new HashMap<>();
 
     static {
         register(SQLNodeType.Statement, new StatementNodeHandler());
@@ -64,7 +64,7 @@ public class SQLNodeParser {
 
     private static void register(SQLNodeType sqlNodeType,
                                  SQLNodeHandler sqlNodeHandler) {
-        hsqlNodeHandlers.put(sqlNodeType, sqlNodeHandler);
+        sqlNodeHandlers.put(sqlNodeType, sqlNodeHandler);
     }
 
     public static SQLNode parse(Node node) {
@@ -72,7 +72,7 @@ public class SQLNodeParser {
         Util.checkNull(node);
 
         SQLNodeType sqlNodeType = SQLNodeType.findSQLNodeType(node);
-        SQLNodeHandler sqlNodeHandler = hsqlNodeHandlers.get(sqlNodeType);
+        SQLNodeHandler sqlNodeHandler = sqlNodeHandlers.get(sqlNodeType);
         SQLNode sqlNode = sqlNodeHandler.handle(node);
         NodeList nodeList = node.getChildNodes();
 

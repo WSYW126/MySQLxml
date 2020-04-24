@@ -10,10 +10,10 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * HbaseTable's schema.
+ * SQLTable's schema.
  *
  * <pre>
- * Including all meta data of hbase table.
+ * Including all meta data of sql table.
  * </pre>
  *
  * @author xinzhi

@@ -90,7 +90,7 @@ public class SQLTableConfig {
      * There are 3 ways to config type info .
      * 1 in config xml.
      * 2 use @SQLTable.
-     * 3 simplehase will use reflection to discover the mapping.
+     * 3 simplesql will use reflection to discover the mapping.
      * </pre>
      */
     public TypeInfo findTypeInfo(Class<?> type) {
@@ -116,11 +116,11 @@ public class SQLTableConfig {
     }
 
     /**
-     * add hbaseQueryList.
+     * add sqlQueryList.
      */
-    public void addSQLQueryList(List<SQLQuery> hbaseQueryList) {
-        for (SQLQuery hBaseQuery : hbaseQueryList) {
-            queryMap.put(hBaseQuery.getId(), hBaseQuery);
+    public void addSQLQueryList(List<SQLQuery> sqlQueryList) {
+        for (SQLQuery sqlQuery : sqlQueryList) {
+            queryMap.put(sqlQuery.getId(), sqlQuery);
         }
     }
 

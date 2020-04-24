@@ -13,7 +13,7 @@ package com.wsyw126.MySQLxml.type;
 public interface TypeHandler {
 
     /**
-     * Convert java object to hbase's column bytes.
+     * Convert java object to sql's column bytes.
      *
      * @param type  java's type.
      * @param value java's object.
