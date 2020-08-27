@@ -20,6 +20,7 @@ class SQLClientImplTest {
 
 
         SQLClient sqlClient = Config.getSqlClient();
+        //这里是mock的数据，有时间来改造一下。
         ResourceCounterDO queryById = sqlClient.findObject(ResourceCounterDO.class, "queryByCount", para);
         log.info("queryById =" + queryById);
 
